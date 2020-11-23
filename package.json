@@ -1,0 +1,14 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "Online bookstore application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Khalil Zayed & Fajer Zayed",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
