@@ -4,11 +4,20 @@
   "description": "Online bookstore application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client/bookstore-client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "Khalil Zayed & Fajer Zayed",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }

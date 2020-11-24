@@ -1,0 +1,70 @@
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+opacity: 1;
+transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+opacity: 1;
+}
+
+.fade-exit-active {
+opacity: 0.01;
+transition: opacity 1000ms ease-in;
+}
+.card-margin {
+margin-bottom: 15px;
+}
+.card-styles {
+background:transparent !important;
+height: 300px;
+width: 200px;
+border-color:transparent;
+transition:all 0.5s linear;
+}
+.card-img {
+height: 300px;
+width: 200px;
+border-color:transparent;
+transition:all 0.5s linear;
+}
+.card-styles:hover .card-img{
+box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.8);
+transform:scale(1.02);
+filter: brightness(50%);
+}
+
+.button-style {
+position: absolute;
+left: 50px;
+top: 170px;
+border-color:transparent !important;
+background-color: rgb(32, 87, 240) !important;
+}
+.button-style2 {
+position: absolute;
+left: 65px;
+top: 80px;
+border-color:transparent !important;
+background-color: green !important;
+}
+.button-style3 {
+position: absolute;
+border-color:transparent !important;
+background-color: rgb(32, 87, 240) !important;
+}
+.remove-text-decoration{
+color: white !important;
+}
+.remove-text-decoration:hover{
+text-decoration: none;
+}
+.poster {
+width: 70%;
+}
+.br-space {
+margin: 10rem 10rem;
+}
