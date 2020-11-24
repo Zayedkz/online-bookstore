@@ -36,30 +36,16 @@ export default class Login extends Component {
     
         // request body
         const body = JSON.stringify({ email, password }); // turn JS object to JSON
-        // axios({
-        //     method: "POST",
-        //     url: "http://localhost:5000/login",
-        //     headers: {
-        //       "Content-Type": "application/json"
-        //     },
-        //     body: body
-        //   }).then(res => {
-        //         localStorage.setItem('userToken', JSON.stringify(res));
-        //         this.toggle();
-        //         this.setState({ msg: null });
-        //     })
-        //     .catch(err => {
-        //         this.setState({ msg: err.msg });
-        //         localStorage.removeItem('userToken');
-        //     })
         axios.post('http://localhost:5000/login', body, config) // body is the data, that is, name, email, password
             .then(res => {
                 localStorage.setItem('userToken', JSON.stringify(res.data));
                 this.toggle();
                 this.setState({ msg: null });
+                window.location.reload(false);
             })
-            .catch(err => {
-                this.setState({ msg: err.msg });
+            .catch((err) => {
+                this.setState({ msg: err.response.data.msg });
+                // alert(err.response.data.msg);
                 localStorage.removeItem('userToken');
             })
     }
@@ -84,6 +70,7 @@ export default class Login extends Component {
                                     placeholder="Email"
                                     className="mb-3"
                                     onChange={this.onChange}
+                                    required={true}
                                 />
                                 <Label for="password">Password</Label>
                                 <Input 
@@ -93,6 +80,7 @@ export default class Login extends Component {
                                     placeholder="Password"
                                     className="mb-3"
                                     onChange={this.onChange}
+                                    required={true}
                                 />
                                 <Button
                                     color="dark"

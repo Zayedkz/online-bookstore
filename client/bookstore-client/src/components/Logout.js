@@ -4,6 +4,7 @@ import { NavLink } from 'reactstrap';
 export default class Logout extends Component {
     logout = () => {
         localStorage.removeItem('userToken');
+        window.location.reload(false);
     }
     render() {
         return (

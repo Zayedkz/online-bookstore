@@ -9,6 +9,11 @@ export default class Register extends Component {
         modal: false,
         name: '',
         email: '',
+        address: '',
+        city: '',
+        country: '',
+        postalcode: '',
+        phone: '',
         password: '',
         msg: null
     }
@@ -27,7 +32,7 @@ export default class Register extends Component {
     onSubmit = (e) => {
         e.preventDefault();
 
-        const { name, email, password } = this.state;
+        const { name, email, address, city, country, postalcode, phone, password } = this.state;
 
         const config = {
             headers: {
@@ -36,7 +41,7 @@ export default class Register extends Component {
         }
     
         // request body
-        const body = JSON.stringify({ name, email, password }); // turn JS object to JSON
+        const body = JSON.stringify({ name, email, address, city, country, postalcode, phone, password }); // turn JS object to JSON
         // axios({
         //     method: "POST",
         //     url: "http://localhost:5000/register",
@@ -58,9 +63,10 @@ export default class Register extends Component {
                 localStorage.setItem('userToken', JSON.stringify(res.data));
                 this.toggle();
                 this.setState({ msg: null });
+                window.location.reload(false);
             })
             .catch(err => {
-                this.setState({ msg: err.msg });
+                this.setState({ msg: err.response.data.msg });
                 localStorage.removeItem('userToken');
             })
     }
@@ -85,6 +91,7 @@ export default class Register extends Component {
                                     placeholder="Name"
                                     className="mb-3"
                                     onChange={this.onChange}
+                                    required={true}
                                 />
                                 <Label for="email">Email</Label>
                                 <Input 
@@ -94,6 +101,57 @@ export default class Register extends Component {
                                     placeholder="Email"
                                     className="mb-3"
                                     onChange={this.onChange}
+                                    required={true}
+                                />
+                                <Label for="Address">Address</Label>
+                                <Input 
+                                    type="text"
+                                    name="address"
+                                    id="address"
+                                    placeholder="Address"
+                                    className="mb-3"
+                                    onChange={this.onChange}
+                                    required={true}
+                                />
+                                <Label for="city">City</Label>
+                                <Input 
+                                    type="text"
+                                    name="city"
+                                    id="city"
+                                    placeholder="City"
+                                    className="mb-3"
+                                    onChange={this.onChange}
+                                    required={true}
+                                />
+                                <Label for="country">Country</Label>
+                                <Input 
+                                    type="text"
+                                    name="country"
+                                    id="country"
+                                    placeholder="Country"
+                                    className="mb-3"
+                                    onChange={this.onChange}
+                                    required={true}
+                                />
+                                <Label for="postalcode">Postal Code</Label>
+                                <Input 
+                                    type="text"
+                                    name="postalcode"
+                                    id="postalcode"
+                                    placeholder="Postal Code"
+                                    className="mb-3"
+                                    onChange={this.onChange}
+                                    required={true}
+                                />
+                                <Label for="phone">Phone</Label>
+                                <Input 
+                                    type="number"
+                                    name="phone"
+                                    id="phone"
+                                    placeholder="Phone"
+                                    className="mb-3"
+                                    onChange={this.onChange}
+                                    required={true}
                                 />
                                 <Label for="password">Password</Label>
                                 <Input 
@@ -103,6 +161,7 @@ export default class Register extends Component {
                                     placeholder="Password"
                                     className="mb-3"
                                     onChange={this.onChange}
+                                    required={true}
                                 />
                                 <Button
                                     color="dark"

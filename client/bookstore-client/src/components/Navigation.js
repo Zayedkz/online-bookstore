@@ -19,12 +19,12 @@ export default class Navigation extends Component {
         });
     }
     render() {
-        var { authenticated, email, name } = this.state.token || "";
+        var { email, name } = this.state.token || "";
         const userLinks = (
             <Fragment>
                 <NavItem>
                     <span className="navbar-text mr-3">
-                        <strong className="text-capitalize">{ authenticated ? `Welcome ${name}` : '' }</strong>
+                        <strong className="text-capitalize">{ this.state.token.authenticated ? `Welcome ${name}` : '' }</strong>
                     </span>
                 </NavItem>
                 <NavItem>
@@ -61,7 +61,7 @@ export default class Navigation extends Component {
                                     <NavItem>
                                         <NavLink href="https://github.com/Zayedkz/online-bookstore">Github</NavLink>
                                     </NavItem>
-                                    { authenticated ? userLinks : guestLinks }
+                                    { this.state.token.authenticated ? userLinks : guestLinks }
                                 </Nav>
                         </Collapse>
                     </Container>
