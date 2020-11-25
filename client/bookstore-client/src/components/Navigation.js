@@ -49,7 +49,7 @@ export default class Navigation extends Component {
                         
                             <NavbarBrand>
                                 <Link to="/" className="remove-text-decoration">
-                                    <img src={'https://i.gyazo.com/bbdacba893317df465152629fd4e5b8e.png'} width="50" height="50" alt="bookstore"/>
+                                    <img className="mx-2" src={'https://i.gyazo.com/bbdacba893317df465152629fd4e5b8e.png'} width="50" height="50" alt="bookstore"/>
                                     Bookstore
                                 </Link>
                             </NavbarBrand>
@@ -58,6 +58,11 @@ export default class Navigation extends Component {
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
                                 <Nav className="ml-auto" navbar>
+                                    <NavbarBrand>
+                                        <Link to="/extra" className="remove-text-decoration">
+                                            SQL Queries
+                                        </Link>
+                                    </NavbarBrand>
                                     <NavItem>
                                         <NavLink href="https://github.com/Zayedkz/online-bookstore">Github</NavLink>
                                     </NavItem>

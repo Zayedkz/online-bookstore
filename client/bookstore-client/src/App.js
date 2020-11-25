@@ -7,6 +7,7 @@ import BooksList from './components/BooksList';
 import Navigation from './components/Navigation';
 import Details from './components/Details';
 import Purchase from './components/Purchase';
+import Extra from './components/Extra';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
                 <Route exact path="/" component={BooksList} />
                 <Route path="/details" component={Details} />
                 <Route path="/purchase" component={Purchase} />
+                <Route path="/extra" component={Extra} />
               </Switch>
             </div>
           </Router>

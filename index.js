@@ -6,6 +6,7 @@ const books = require('./routes/books');
 const register = require('./routes/register');
 const login = require('./routes/login');
 const orders = require('./routes/orders');
+const extra = require('./routes/extra');
 var app = express();
 app.use(express.json());
 app.use(cors());
@@ -13,6 +14,7 @@ app.use('/books', books);
 app.use('/register', register);
 app.use('/login', login);
 app.use('/orders', orders);
+app.use('/extra', extra);
 
 // let sql = "SELECT * FROM books";
 // con.query(sql, function (err, result) {
